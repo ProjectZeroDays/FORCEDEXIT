@@ -1,4 +1,5 @@
 #!/bin/sh
 killall -9 IMTranscoderAgent
 killall -9 com.apple.WebKit.WebContent
+echo "Post-install script executed"
 exit 0

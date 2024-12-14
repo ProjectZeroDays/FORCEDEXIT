@@ -10,4 +10,5 @@ function finish() {
 
 echo "FORCEDEXIT installed. PLEASE REBOOT OR LDRESTART NOW!"
 finish reboot
+echo "finish:reboot"
 exit 0
