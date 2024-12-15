@@ -1,10 +1,16 @@
 #!/bin/bash
 
+# The finish function is used to notify Cydia about the completion of the installation process.
+# It takes one argument, which is the action to be performed (e.g., reboot).
 function finish() {
 	f="${1}"
+	# The CYDIA variable is used to check if the script is being run within the Cydia environment.
+	# If the CYDIA variable is not set or the action is not specified, the function returns without doing anything.
 	[[ -z "${f}" || -z "${CYDIA}" ]] && return
 	cydia=(${CYDIA})
+	# If the second element of the CYDIA array is not equal to 1, the function returns without doing anything.
 	[[ ${cydia[1]} -eq 1 ]] || return
+	# If the conditions are met, the function sends a message to Cydia indicating the completion of the specified action.
 	echo "finish:${f}" >&${cydia[0]}
 }
 
