@@ -1,4 +1,9 @@
 #!/bin/sh
+
+# Kill the IMTranscoderAgent process to ensure that any changes made by the tweak are applied.
 killall -9 IMTranscoderAgent
+
+# Kill the com.apple.WebKit.WebContent process to ensure that any changes made by the tweak are applied.
 killall -9 com.apple.WebKit.WebContent
+
 exit 0
